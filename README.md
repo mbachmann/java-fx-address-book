@@ -2,11 +2,11 @@
 
 | [Intro](README.md)
 | [1 Scene Builder](readme/part1.md)
-| [2 Model and TableView](readme/part2.md)
+| [2 Model TableView](readme/part2.md)
 | [3 Interacting](readme/part3.md)
-| [4 CSS Styling](readme/part4.md)
-| [5 Storing Data as XML](readme/part5.md)
-| [6 Statics Data](readme/part6.md)
+| [4 CSS](readme/part4.md)
+| [5 XML](readme/part5.md)
+| [6 Statics](readme/part6.md)
 | [7 Deployment](readme/part7.md)
 |
 
