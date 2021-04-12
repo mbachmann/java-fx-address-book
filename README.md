@@ -15,10 +15,11 @@ The original [_Java FX Address Book tutorial_](https://code.makery.ch/library/ja
 Many people all over the world have been reading the tutorial from _Marco Jakob_ and gave very positive feedback.
 Unfortunately the tutorial has not been maintained to later versions of JDK and Java FX.
 
-This [tutorial](https://github.com/mbachmann/java-fx-address-book) is based on  **JDK 16** with **modular Java** and **Java FX 16**. Make sure your tool stack is properly installed.
+This updated [tutorial](https://github.com/mbachmann/java-fx-address-book) is based on  **JDK 16** with **modular Java**, **Java FX 16** and **Maven**. Make sure your tool stack is properly installed.
 For installing a _Java Development Environment_ based on **Jet Brains IntelliJ** you can refer to this [tutorial](https://github.com/mbachmann/java-development-environment-installation)
 
-This tutorial walks you through designing, programming and deploying an address application. This is how the final application will look like:
+The _Address Book Tutorial_ walks you through designing, programming and deploying an address application.
+This is how the final application will look like:
 
 ![address-app.png](readme/images/address-app.png)
 
