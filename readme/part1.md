@@ -98,6 +98,7 @@ module ch.makery.address {
     requires javafx.fxml;
 
     opens ch.makery.address to javafx.fxml;
+    opens ch.makery.address.view to javafx.fxml;
     exports ch.makery.address;
 }
 ```
