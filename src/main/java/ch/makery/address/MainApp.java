@@ -21,7 +21,6 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
     // one of css/DarkTheme.css css/metro/dark_theme.css css/metro/light_theme.css css/FlatBee.css
-    // https://github.com/dicolar/jbootx css/bootstrap3.css
     private final String cssName = "css/DarkTheme.css";
 
     /**
