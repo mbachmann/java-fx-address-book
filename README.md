@@ -11,12 +11,14 @@
 |
 
 
-The original [_Java FX Address Book tutorial_](https://code.makery.ch/library/javafx-tutorial/ ) is from _Marco Jakob_ based on Eclipse with _Oracle JDK 8_.
-Many people all over the world have been reading the tutorial from _Marco Jakob_ and gave very positive feedback.
+The original [_Java FX Address Book_](https://code.makery.ch/library/javafx-tutorial/ )  tutorial has been created by _Marco Jakob_ based on Eclipse with _Oracle JDK 8_.
+Many people all over the world have been reading the tutorial and gave very positive feedback.
 Unfortunately the tutorial has not been maintained to later versions of JDK and Java FX.
 
 This updated [tutorial](https://github.com/mbachmann/java-fx-address-book) is based on  **JDK 16** with **modular Java**, **Java FX 16** and **Maven**. Make sure your tool stack is properly installed.
-For installing a _Java Development Environment_ based on **Jet Brains IntelliJ** you can refer to this [tutorial](https://github.com/mbachmann/java-development-environment-installation)
+For installing a _Java Development Environment_ based on **Jet Brains IntelliJ** you can refer to
+this [tutorial](https://github.com/mbachmann/java-development-environment-installation). The configuration
+of Eclipse can be found [here](readme/eclipse.md).
 
 The _Address Book Tutorial_ walks you through designing, programming and deploying an address application.
 This is how the final application will look like:
@@ -35,7 +37,7 @@ This is how the final application will look like:
 - [Part 6: Statics Data](readme/part6.md)
 - [Part 7: Deployment](readme/part7.md)
 
-Each result of each step is available as a branch in this repository. It allows you to check your results.
+The results of each step are available as a separate branch in this repository. It allows you to verify your source code.
 
 ##  What you will learn
 
@@ -54,11 +56,12 @@ Each result of each step is available as a branch in this repository. It allows 
 - Deploying a JavaFX application as a native package for different platforms using jpackage (JDK14++)
 
 
-##  How to use this TutorialThere are two ways to use this tutorial:
+##  How to use this Tutorial
 
+There are two ways to use this tutorial:
 
-1. learn-a-lot track: Create your own JavaFX project from the ground up.
-2. fast track: Check out the desired branch of the tutorial part into your IDE. Then go through the tutorial to understand the code.
+1. **learn-a-lot track**: Create your own JavaFX project from the ground up.
+2. **fast track**: Check out the desired branch of the tutorial part into your IDE. Then go through the tutorial to understand the code.
 
 The best way to start is **forking** or cloning this repository.
 
