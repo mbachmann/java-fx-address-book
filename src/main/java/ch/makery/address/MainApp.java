@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -19,11 +20,14 @@ public class MainApp extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
+    // one of css/DarkTheme.css css/metro/dark_theme.css css/metro/light_theme.css css/FlatBee.css
+    // https://github.com/dicolar/jbootx css/bootstrap3.css
+    private final String cssName = "css/DarkTheme.css";
 
     /**
      * The data as an observable list of Persons.
      */
-    private ObservableList<Person> personData = FXCollections.observableArrayList();
+    private final ObservableList<Person> personData = FXCollections.observableArrayList();
 
     /**
      * Constructor
@@ -43,7 +47,7 @@ public class MainApp extends Application {
 
     /**
      * Returns the data as an observable list of Persons.
-     * @return
+     * @return the ObservableList with personData
      */
     public ObservableList<Person> getPersonData() {
         return personData;
@@ -53,6 +57,9 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("AddressApp");
+
+        // Set the application icon.
+        this.primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("images/address_book_32.png")));
 
         initRootLayout();
 
@@ -71,6 +78,9 @@ public class MainApp extends Application {
 
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
+            if (cssName != null && !cssName.isEmpty()) {
+                scene.getStylesheets().add(getClass().getResource(cssName).toExternalForm());
+            }
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
@@ -121,12 +131,19 @@ public class MainApp extends Application {
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
+            if (cssName != null && !cssName.isEmpty()) {
+                scene.getStylesheets().add(getClass().getResource(cssName).toExternalForm());
+            }
+
             dialogStage.setScene(scene);
 
             // Set the person into the controller.
             PersonEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setPerson(person);
+
+            // Set the dialog icon.
+            dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("images/edit.png")));
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();
@@ -140,7 +157,7 @@ public class MainApp extends Application {
 
     /**
      * Returns the main stage.
-     * @return The primary stage
+     * @return
      */
     public Stage getPrimaryStage() {
         return primaryStage;
@@ -151,3 +168,4 @@ public class MainApp extends Application {
         launch(args);
     }
 }
+

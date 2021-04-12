@@ -11,7 +11,8 @@
 |
 
 
-The original [_Java FX Address Book_](https://code.makery.ch/library/javafx-tutorial/ )  tutorial has been created by _Marco Jakob_ based on Eclipse with _Oracle JDK 8_.
+The original [_Java FX Address Book_](https://code.makery.ch/library/javafx-tutorial/ )  tutorial
+has been created by _Marco Jakob_ based on Eclipse with _Oracle JDK 8_.
 Many people all over the world have been reading the tutorial and gave very positive feedback.
 Unfortunately the tutorial has not been maintained to later versions of JDK and Java FX.
 
