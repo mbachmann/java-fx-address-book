@@ -31,7 +31,7 @@ This is how the final application will look like:
 
 - [Part 1: Scene Builder](readme/part1.md)
 - [Part 2: Model and TableView](readme/part2.md)
-- [Part 3: Interacting](readme/part3.md)
+- [Part 3: Interacting with the User](readme/part3.md)
 - [Part 4: CSS Styling](readme/part4.md)
 - [Part 5: Storing Data as XML](readme/part5.md)
 - [Part 6: Statics Data](readme/part6.md)
