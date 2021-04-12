@@ -6,7 +6,7 @@
 | [3 Interacting](part3.md)
 | [4 CSS](part4.md)
 | [5 XML](part5.md)
-| [6 Statics](part6.md)
+| [6 Statistics](part6.md)
 | [7 Deployment](part7.md)
 |
 

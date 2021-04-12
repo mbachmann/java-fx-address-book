@@ -9,6 +9,10 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import ch.makery.address.util.LocalDateAdapter;
+
 /**
  * Model class for a Person.
  *
@@ -32,9 +36,9 @@ public class Person {
 
     /**
      * Constructor with some initial data.
-     * 
-     * @param firstName
-     * @param lastName
+     *
+     * @param firstName the first name
+     * @param lastName the last name
      */
     public Person(String firstName, String lastName) {
         this.firstName = new SimpleStringProperty(firstName);
@@ -107,6 +111,7 @@ public class Person {
         return city;
     }
 
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     public LocalDate getBirthday() {
         return birthday.get();
     }

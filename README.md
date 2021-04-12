@@ -6,7 +6,7 @@
 | [3 Interacting](readme/part3.md)
 | [4 CSS](readme/part4.md)
 | [5 XML](readme/part5.md)
-| [6 Statics](readme/part6.md)
+| [6 Statistics](readme/part6.md)
 | [7 Deployment](readme/part7.md)
 |
 
@@ -35,7 +35,7 @@ This is how the final application will look like:
 - [Part 3: Interacting with the User](readme/part3.md)
 - [Part 4: CSS Styling](readme/part4.md)
 - [Part 5: Storing Data as XML](readme/part5.md)
-- [Part 6: Statics Data](readme/part6.md)
+- [Part 6: Statistics Data](readme/part6.md)
 - [Part 7: Deployment](readme/part7.md)
 
 The results of each step are available as a separate branch in this repository. It allows you to verify your source code.
@@ -62,7 +62,8 @@ The results of each step are available as a separate branch in this repository. 
 There are two ways to use this tutorial:
 
 1. **learn-a-lot track**: Create your own JavaFX project from the ground up.
-2. **fast track**: Check out the desired branch of the tutorial part into your IDE. Then go through the tutorial to understand the code.
+2. **fast track**: Check out the desired branch of the tutorial part into your _IDE_.
+Then go through the tutorial to understand the code.
 
 The best way to start is **forking** or cloning this repository.
 
