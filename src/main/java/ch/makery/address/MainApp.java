@@ -17,7 +17,7 @@ public class MainApp extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
-    
+
     /**
      * The data as an observable list of Persons.
      */
@@ -40,7 +40,7 @@ public class MainApp extends Application {
     }
 
     /**
-     * Returns the data as an observable list of Persons. 
+     * Returns the data as an observable list of Persons.
      * @return
      */
     public ObservableList<Person> getPersonData() {
@@ -107,6 +107,7 @@ public class MainApp extends Application {
     }
 
     public static void main(String[] args) {
+        System.setProperty("prism.lcdtext", "false");
         launch(args);
     }
 }
