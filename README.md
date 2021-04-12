@@ -1,4 +1,4 @@
-# Java FX Address Book
+# Java FX Address Book (Modular JDK16 with FX16)
 
 | [Intro](README.md)
 | [1 Scene Builder](readme/part1.md)
