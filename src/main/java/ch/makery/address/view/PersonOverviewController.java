@@ -1,14 +1,12 @@
 package ch.makery.address.view;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import ch.makery.address.MainApp;
 import ch.makery.address.model.Person;
 import ch.makery.address.util.DateUtil;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.KeyCode;
 
 public class PersonOverviewController {
     @FXML
@@ -50,18 +48,36 @@ public class PersonOverviewController {
         // Initialize the person table with the two columns.
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
-        
+
         // Clear person details.
         showPersonDetails(null);
 
         // Listen for selection changes and show the person details when changed.
         personTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showPersonDetails(newValue));
+
+        personTable.setRowFactory(tv -> {
+            TableRow<Person> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty())) {
+                    // Person rowData = row.getItem();
+                    handleEditPerson();
+                    // System.out.println(rowData);
+                }
+            });
+            return row;
+        });
+
+        personTable.setOnKeyPressed(event -> {
+            if (event.getCode() != null && (event.getCode() == KeyCode.DELETE || event.getCode() == KeyCode.BACK_SPACE)) {
+                handleDeletePerson();
+            }
+        });
     }
 
     /**
      * Is called by the main application to give a reference back to itself.
-     * 
+     *
      * @param mainApp
      */
     public void setMainApp(MainApp mainApp) {
@@ -70,11 +86,11 @@ public class PersonOverviewController {
         // Add observable list data to the table
         personTable.setItems(mainApp.getPersonData());
     }
-    
+
     /**
      * Fills all text fields to show details about the person.
      * If the specified person is null, all text fields are cleared.
-     * 
+     *
      * @param person the person or null
      */
     private void showPersonDetails(Person person) {
@@ -96,7 +112,7 @@ public class PersonOverviewController {
             birthdayLabel.setText("");
         }
     }
-    
+
     /**
      * Called when the user clicks on the delete button.
      */
@@ -112,11 +128,11 @@ public class PersonOverviewController {
             alert.setTitle("No Selection");
             alert.setHeaderText("No Person Selected");
             alert.setContentText("Please select a person in the table.");
-            
+
             alert.showAndWait();
         }
     }
-    
+
     /**
      * Called when the user clicks the new button. Opens a dialog to edit
      * details for a new person.
@@ -150,7 +166,7 @@ public class PersonOverviewController {
             alert.setTitle("No Selection");
             alert.setHeaderText("No Person Selected");
             alert.setContentText("Please select a person in the table.");
-            
+
             alert.showAndWait();
         }
     }
