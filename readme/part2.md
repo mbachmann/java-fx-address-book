@@ -12,7 +12,7 @@
 
 Derived from [_Java FX Address Book_](https://code.makery.ch/library/javafx-tutorial/) tutorial.
 
-![result-part-3.png](images/result-part-3.png)
+![result-part-3.png](images/part2-result.png)
 
 <br/>
 
