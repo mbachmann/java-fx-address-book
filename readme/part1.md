@@ -125,6 +125,8 @@ We are using Maven. Maven wants us to put the fxml view files to the `resources`
 
 Note: Our view package will also contain some controllers that are directly related to a single view. Let’s call them view-controllers.
 
+![project-structure.png](images/project-structure.png)
+
 ## Create the FXML Layout File
 
 There are two ways to create the user interface.
@@ -138,7 +140,7 @@ Right-click on the view package `ch.makery.address.view` in the _resources area_
 
 #### IntelliJ IDE
 
-With the **IntelliJ** IDE_ you do (Right-click on the resources-folder package
+With the **IntelliJ** _IDE_ you do (Right-click on the **resources-folder** package
 `ch.makery.address.view`, New… | fxml File):
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![intellij-new-fxml-file.png](images/intellij-new-fxml-file.png)
@@ -177,6 +179,10 @@ The content of the generated file looks like:
 
 </AnchorPane>
 ```
+
+The file `PersonOverview.fxml` in the **resource area** folder package `ch.makery.address.view`:
+
+![file-person-overview-fxml.png](images/file-person-overview-fxml.png)
 
 ##  Design with Scene Builder
 
@@ -280,6 +286,8 @@ just created `PersonOverview.fxml`.
 
 Open the `RootLayout.fxml` file with the source editor and replace `AnchorPane` by `BorderPane`.
 
+![folder-root-layout.png](images/folder-root-layout.png)
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
@@ -325,7 +333,9 @@ and adds the `PersonOverview.fxml` in the center.
 
 #### IntelliJ
 
-Right-click on your project and choose New _JavaFXApplication_. Use the name `MainApp`.
+Right-click on your project in the package `ch.makery.address` and choose New _JavaFXApplication_. Use the name `MainApp`.
+
+![folder-main-app.png](images/folder-main-app.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![intellij-new-fava-fx-application.png](images/intellij-new-fava-fx-application.png)
 
@@ -498,10 +508,3 @@ If it still doesn't work, check out the branch `1_scene_builder` of this tutoria
 
 In [Tutorial Part 2](part2.md) we will add some data and functionality to our `AddressApp`.
 
-Some other articles you might find interesting:
-
-- [JavaFX Dialogs (official)](https://code.makery.ch/blog/javafx-dialogs-official/)
-- [JavaFX Date Picker](https://code.makery.ch/blog/javafx-8-date-picker/)
-- [JavaFX Event Handling Examples](https://code.makery.ch/blog/javafx-8-event-handling-examples/)
-- [JavaFX TableView Sorting and Filtering](https://code.makery.ch/blog/javafx-8-tableview-sorting-filtering/)
-- [JavaFX TableView Cell Renderer](https://code.makery.ch/blog/javafx-8-tableview-cell-renderer/)
