@@ -1,4 +1,4 @@
-# Part 2: Part 2: Model and TableView
+# Part 2: Model and TableView
 
 | [Intro](../README.md)
 | [1 Scene Builder](part1.md)
