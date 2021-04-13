@@ -138,7 +138,7 @@ Right-click on the view package `ch.makery.address.view` in the _resources area_
 
 #### IntelliJ IDE
 
-With the **IntelliJ** IDE_ you do (Right-click on the resources-folder package
+With the **IntelliJ** _IDE_ you do (Right-click on the resources-folder package
 `ch.makery.address.view`, New… | fxml File):
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![intellij-new-fxml-file.png](images/intellij-new-fxml-file.png)
@@ -498,10 +498,3 @@ If it still doesn't work, check out the branch `1_scene_builder` of this tutoria
 
 In [Tutorial Part 2](part2.md) we will add some data and functionality to our `AddressApp`.
 
-Some other articles you might find interesting:
-
-- [JavaFX Dialogs (official)](https://code.makery.ch/blog/javafx-dialogs-official/)
-- [JavaFX Date Picker](https://code.makery.ch/blog/javafx-8-date-picker/)
-- [JavaFX Event Handling Examples](https://code.makery.ch/blog/javafx-8-event-handling-examples/)
-- [JavaFX TableView Sorting and Filtering](https://code.makery.ch/blog/javafx-8-tableview-sorting-filtering/)
-- [JavaFX TableView Cell Renderer](https://code.makery.ch/blog/javafx-8-tableview-cell-renderer/)
