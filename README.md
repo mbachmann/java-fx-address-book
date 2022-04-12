@@ -1,4 +1,4 @@
-# Java FX Address Book (Modular JDK16 with FX16)
+# Java FX Address Book (Modular JDK17 with FX17)
 
 | [Intro](README.md)
 | [1 Scene Builder](readme/part1.md)
@@ -15,7 +15,7 @@ The original [_Java FX Address Book_](https://code.makery.ch/library/javafx-tuto
 Many people all over the world have been reading the tutorial and gave very positive feedback.
 Unfortunately the tutorial has not been maintained to later versions of JDK and Java FX.
 
-This updated [tutorial](https://github.com/mbachmann/java-fx-address-book) is based on  **JDK 16** with **modular Java**, **Java FX 16** and **Maven**. Make sure your tool stack is properly installed.
+This updated [tutorial](https://github.com/mbachmann/java-fx-address-book) is based on  **JDK 17** with **modular Java**, **Java FX 17** and **Maven**. Make sure your tool stack is properly installed.
 For installing a _Java Development Environment_ based on **Jet Brains IntelliJ** you can refer to
 this [tutorial](https://github.com/mbachmann/java-development-environment-installation). The configuration
 of Eclipse can be found [here](readme/eclipse.md).

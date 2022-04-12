@@ -41,7 +41,7 @@ Derived from [_Java FX Address Book_](https://code.makery.ch/library/javafx-tuto
 You might want to bookmark the following links:
 
 - [Oracle Java Documentation](https://docs.oracle.com/en/java/index.html) for Java Platform, Standard Edition (Java SE)
-- [Java 16 API](https://docs.oracle.com/en/java/javase/16/) for Java Platform, Standard Edition (Java SE)
+- [Java 17 API](https://docs.oracle.com/en/java/javase/17/) for Java Platform, Standard Edition (Java SE)
 - [Open Java FX](https://openjfx.io/) for Open Source Java FX
 - [Getting Started with JavaFX](https://openjfx.io/openjfx-docs/) for Open Source Java FX
 - [ControlsFX](https://controlsfx.github.io/javadoc/11.1.0/index.html) - ControlsFX project for additional JavaFX controls
