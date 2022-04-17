@@ -36,7 +36,7 @@ JPackage Gradle Plugin
 
 
 
-## Change JLink Plugin
+## Change the JLink Plugin configuration
 
 Replace the content of the  _javafx-maven-plugin_ in the _pom.xml_ file:
 
