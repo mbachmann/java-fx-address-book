@@ -591,8 +591,7 @@ The Grouping App should start.
 **macOs Installer**
 
 
-![assets/macOs.png](../assets/macOs.png)
-
+![images/macOs.png](images/macOs.png)
 <br/>
 
 **Windows Installer**
