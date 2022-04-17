@@ -583,7 +583,7 @@ To solve the problem do the following after the installation.
 
 ```sh
 cd /Applications
-sudo xattr -r -d com.apple.quarantine Grouping.app
+sudo xattr -r -d com.apple.quarantine Address-Book.app
 ```
 
 The Grouping App should start.
@@ -597,8 +597,7 @@ The Grouping App should start.
 
 **Windows Installer**
 
-![assets/win-installer.png](../assets/win-installer.png)
-
+![images/win-installer.png](images/win-installer.png)
 <br/>
 
 ### Run the project from the command line

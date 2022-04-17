@@ -164,11 +164,11 @@
                <winMenu>true</winMenu>
                <winShortcut>true</winShortcut>
                <winDirChooser>true</winDirChooser>
-               <winMenuGroup>Address Book</winMenuGroup>
+               <winMenuGroup>Address-Book</winMenuGroup>
                <linuxShortcut>true</linuxShortcut>
                <linuxPackageName>address-book</linuxPackageName>
                <linuxAppCategory>Utility</linuxAppCategory>
-               <linuxMenuGroup>Address Book</linuxMenuGroup>
+               <linuxMenuGroup>Address-Book</linuxMenuGroup>
                <icon>${project.basedir}/assets/user_group.${iconext}</icon>
                <javaOptions>
                   <option>-Dfile.encoding=UTF-8</option>
