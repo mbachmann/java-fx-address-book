@@ -91,7 +91,17 @@
          <artifactId>jakarta.xml.bind-api</artifactId>
          <version>2.3.3</version>
       </dependency>
-      <!-- runtime -->
+      <dependency>
+         <groupId>org.glassfish.jaxb</groupId>
+         <artifactId>jaxb-runtime</artifactId>
+         <version>2.3.2</version>
+      </dependency>
+      <dependency>
+         <groupId>jakarta.activation</groupId>
+         <artifactId>jakarta.activation-api</artifactId>
+         <version>1.2.2</version>
+      </dependency>
+      <!-- runtime
       <dependency>
          <groupId>org.glassfish.jaxb</groupId>
          <artifactId>jaxb-runtime</artifactId>
@@ -103,7 +113,7 @@
                <artifactId>jakarta.activation</artifactId>
             </exclusion>
          </exclusions>
-      </dependency>
+      </dependency>-->
 
 
    </dependencies>
@@ -121,10 +131,65 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-maven-plugin</artifactId>
             <version>0.0.8</version>
+            <executions>
+               <execution>
+                  <!-- Default configuration for running with: mvn clean javafx:run -->
+                  <id>default-cli</id>
+                  <configuration>
+                     <mainClass>ch.makery.address/ch.makery.address.MainApp</mainClass>
+                     <launcher>address-book</launcher>
+
+                     <jlinkZipName>address-book</jlinkZipName>
+                     <jlinkImageName>address-book</jlinkImageName>
+                     <noManPages>true</noManPages>
+                     <stripDebug>true</stripDebug>
+                     <noHeaderFiles>true</noHeaderFiles>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+         <plugin>
+            <groupId>org.panteleyev</groupId>
+            <artifactId>jpackage-maven-plugin</artifactId>
+            <version>1.4.0</version>
             <configuration>
-               <mainClass>org.example.App</mainClass>
+               <name>Address Book</name>
+               <appVersion>1.0.0</appVersion>
+               <vendor>ch.makery</vendor>
+               <module>ch.makery.address/ch.makery.address.MainApp</module>
+               <runtimeImage>target/address-book</runtimeImage>
+               <modulePath>${java.home}/jmods</modulePath>
+               <destination>target/dist</destination>
+               <macPackageName>address-book</macPackageName>
+               <winMenu>true</winMenu>
+               <winShortcut>true</winShortcut>
+               <winDirChooser>true</winDirChooser>
+               <winMenuGroup>Address Book</winMenuGroup>
+               <linuxShortcut>true</linuxShortcut>
+               <linuxPackageName>address-book</linuxPackageName>
+               <linuxAppCategory>Utility</linuxAppCategory>
+               <linuxMenuGroup>Address Book</linuxMenuGroup>
+               <icon>${project.basedir}/assets/user_group.${iconext}</icon>
+               <javaOptions>
+                  <option>-Dfile.encoding=UTF-8</option>
+               </javaOptions>
             </configuration>
          </plugin>
       </plugins>
    </build>
+   <profiles>
+      <profile>
+         <id>macOs</id>
+         <properties>
+            <iconext>icns</iconext>
+         </properties>
+      </profile>
+      <profile>
+         <id>win</id>
+         <properties>
+            <iconext>ico</iconext>
+         </properties>
+      </profile>
+   </profiles>
 </project>
+

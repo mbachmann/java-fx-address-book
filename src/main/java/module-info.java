@@ -3,6 +3,7 @@ module ch.makery.address {
     requires javafx.fxml;
     requires java.prefs;
     requires java.xml.bind;
+    requires com.sun.xml.bind;
 
     opens ch.makery.address to javafx.fxml;
     opens ch.makery.address.view to javafx.fxml;

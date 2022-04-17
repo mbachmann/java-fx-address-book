@@ -2,6 +2,8 @@ package ch.makery.address;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.prefs.Preferences;
 
 import ch.makery.address.model.PersonListWrapper;
@@ -11,11 +13,14 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import ch.makery.address.model.Person;
@@ -89,7 +94,7 @@ public class MainApp extends Application {
             if (cssName != null && !cssName.isEmpty()) {
                 scene.getStylesheets().add(getClass().getResource(cssName).toExternalForm());
             }
-
+            setMacMenuBar();
             // Give the controller access to the main app.
             RootLayoutController controller = loader.getController();
             controller.setMainApp(this);
@@ -103,7 +108,9 @@ public class MainApp extends Application {
         // Try to load last opened person file.
         File file = getPersonFilePath();
         if (file != null) {
-            loadPersonDataFromFile(file);
+            if (file.exists()) {
+                loadPersonDataFromFile(file);
+            }
         }
     }
 
@@ -234,12 +241,12 @@ public class MainApp extends Application {
             setPersonFilePath(file);
 
         } catch (Exception e) { // catches ANY exception
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Could not load data");
-            alert.setContentText("Could not load data from file:\n" + file.getPath());
 
-            alert.showAndWait();
+            showAlert(e,
+                    file,
+                    "Could not load data",
+                    "Could not load data from file:\n" + file.getPath()
+            );
         }
     }
 
@@ -265,12 +272,12 @@ public class MainApp extends Application {
             // Save the file path to the registry.
             setPersonFilePath(file);
         } catch (Exception e) { // catches ANY exception
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Could not save data");
-            alert.setContentText("Could not save data to file:\n" + file.getPath());
+            showAlert(e,
+                    file,
+                    "Could not save data",
+                    "Could not save data to file:\n" + file.getPath()
+            );
 
-            alert.showAndWait();
         }
     }
 
@@ -301,6 +308,60 @@ public class MainApp extends Application {
         }
     }
 
+    private void showAlert(Exception ex, File file, String headerText, String contentText) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Could not load data");
+        alert.setContentText("Could not load data from file:\n" + file.getPath());
+        addIconToDialog(alert);
+
+        // Create expandable Exception.
+        StringWriter sw = new StringWriter();
+        PrintWriter pw = new PrintWriter(sw);
+        ex.printStackTrace(pw);
+        String exceptionText = sw.toString();
+
+        Label label = new Label("The exception stacktrace was:");
+
+        TextArea textArea = new TextArea(exceptionText);
+        textArea.setEditable(false);
+        textArea.setWrapText(true);
+
+        textArea.setMaxWidth(Double.MAX_VALUE);
+        textArea.setMaxHeight(Double.MAX_VALUE);
+        GridPane.setVgrow(textArea, Priority.ALWAYS);
+        GridPane.setHgrow(textArea, Priority.ALWAYS);
+
+        GridPane expContent = new GridPane();
+        expContent.setMaxWidth(Double.MAX_VALUE);
+        expContent.add(label, 0, 0);
+        expContent.add(textArea, 0, 1);
+
+        // Set expandable Exception into the dialog pane.
+        alert.getDialogPane().setExpandableContent(expContent);
+
+        alert.showAndWait();
+    }
+
+    private void setMacMenuBar() {
+        Node node = rootLayout.getTop();
+        if (node instanceof MenuBar) {
+            MenuBar menuBar = (MenuBar) node;
+            final String os = System.getProperty("os.name");
+            if (os != null && os.startsWith("Mac")){
+                menuBar.useSystemMenuBarProperty().set(true);
+            }
+        }
+    }
+
+    private void addIconToDialog(Dialog dialog) {
+        // Get the Stage.
+        Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
+
+        // Add a custom icon.
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("images/address_book_32.png")));
+    }
+
 
     /**
      * Returns the main stage.
@@ -314,5 +375,6 @@ public class MainApp extends Application {
         System.setProperty("prism.lcdtext", "false");
         launch(args);
     }
+
 }
 
